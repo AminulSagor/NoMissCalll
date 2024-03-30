@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/request"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_margin="5dp"
+        >
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:hint="@string/search_contact_hint"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:autofillHints="telephone"
+            android:inputType="phone"
+            />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="#0000FF"
+            android:gravity="center"
+            android:text="@string/add_button_text"
+            android:layout_marginBottom="7dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/simpleText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/search_contact"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_below="@id/request"
+        android:layout_margin="5dp"
+        />
+    <TextView
+        android:id="@+id/noContact"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/noContact"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_below="@id/simpleText"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/simpleText"
+        android:layout_margin="5dp"
+
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addedContact"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            />
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/messageWriting"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/setMessage"
+        android:hint="@string/messageWriting"
+        android:gravity="start"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+        android:background="#F2F7F2"
+        android:inputType="textLongMessage"
+        android:autofillHints="telephone"
+        />
+    <Button
+        android:id="@+id/setMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setMessage"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
